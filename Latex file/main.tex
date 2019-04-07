@@ -8,6 +8,7 @@
 \usepackage{natbib}
 \usepackage{graphicx}
 \usepackage{hyperref}
+\usepackage{listings}
 
 \begin{document}
 
@@ -17,8 +18,12 @@
 
 Lets modify the classic merge sort algorithm a little bit. What happens if instead of splitting the array in 2 parts we divide it in 3? You can assume that exists a three-way merge subroutine. What is the overall asymptotic running time of this algorithm?
 
-\emph{BONUS:} Implement the three-way merge sort algorithm.
+\emph{BONUS:} Implement the three-way merge sort algorithm.\\
 
+\textbf{Solution:}\\
+The execution time of the traditional merge sort is of\begin{equation} cn (log2 (n) +1) \end{equation} , but when divided into 3 subprocesses, this would change to a time of execution of \begin{equation} cn (log3 (n) +1) \end{equation} being more optimal than the traditional.\\\\
+\includegraphics[width=8cm, height=6cm]{Captura}
+\centering
 \section{Competitive programming}
 
 Welcome to your first competitive programming problem!!! 
@@ -29,7 +34,14 @@ Welcome to your first competitive programming problem!!!
     
     \item Once that you finish with that problem continue with \textbf{458 - The Decoder}. Again, this problem is just to build your confidence in competitive programming.
     
-    \item \emph{BONUS:} \textbf{10855 - Rotated squares}
+    \item \emph{BONUS:} \textbf{10855 - Rotated squares}\\
+    
+\textbf{Solution:}\\
+\textbf{The 3n + 1 problem:}\\
+\lstinputlisting[language=c++]{100.cpp}
+////////////////////////////////////////////////////////////////////////////// \\
+\textbf{The Decoder:}\\
+\lstinputlisting[language=c++]{458.cpp}
     
 \end{itemize}
 
@@ -67,11 +79,20 @@ Your assignment now is to compare the number of operations performed by the quad
 
 Note: Include(.tex) and attach(.cpp) your source code, of course.\\
 
-\emph{BONUS:} How about Sch\"{o}nhage-Strassen algorithm ? 
+\textbf{Solution:}\\
+\lstinputlisting[language=c++]{multiplication.cpp}
+////////////////////////////////////////////////////////////////////////////// \\
+The Karatsuba algorithm could not be implemented correctly, but the grade-school multiplication works correctly. Theoretically, the Karatsuba algorithm is more optimal than the grade-school multiplication because Kartsuba's running time is \begin{equation} n^{log2 (3)} \end{equation} while the grade-school multiplication is \begin{equation} n^{2} \end{equation}\\
+\includegraphics[width=8cm, height=6cm]{2}
 
+\emph{BONUS:} How about Sch\"{o}nhage-Strassen algorithm ? 
+\textbf{Solution Bonus:}\\
+
+Theoretically the Schönhage-Strassen algorithm having an execution time of n * log2 (n) * log2 (log2 (n)) is more optimal than the karatsuba algorithm\\\\
+\includegraphics[width=8cm, height=6cm]{2}
 \section{Wrapping up}
 
-Arrange the following functions in increasing order of growth rate with $g(n)$ following $f(n)$ if $f(n) = \mathcal{O}(g(n))$
+Arrange the following functions in increasing order of growth rate with $g(n)$ following $f(n)$ if $f(n) = \mathcal{O}(g(n))
 
 \begin{enumerate}
     \item $n^{2}log(n)$
@@ -80,5 +101,13 @@ Arrange the following functions in increasing order of growth rate with $g(n)$ f
     \item $n^{log(n)}$
     \item $n^{2}$
 \end{enumerate}
-
+\textbf{Solution:}\\
+Ordered from the slowest to the fastest\\
+\begin{enumerate}
+    \item $n^{2}$
+    \item $n^{2}log(n)$
+    \item $n^{log(n)}$
+    \item $2^{n}$
+    \item $2^{2^{n}}$
+\end{enumerate}
 \end{document}
